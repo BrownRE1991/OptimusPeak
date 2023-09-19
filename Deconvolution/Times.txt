@@ -1,0 +1,152 @@
+68 minutes and 15 seconds elapsed.
+70 minutes and 18 seconds elapsed.
+68 minutes and 27 seconds elapsed.
+885 minutes and 5 seconds elapsed.
+411 minutes and 0 seconds elapsed.
+843 minutes and 12 seconds elapsed.
+418 minutes and 8 seconds elapsed.
+68 minutes and 59 seconds elapsed.
+619 minutes and 2 seconds elapsed.
+176 minutes and 20 seconds elapsed.
+2184 minutes and 15 seconds elapsed.
+88 minutes and 16 seconds elapsed.
+801 minutes and 11 seconds elapsed.
+184 minutes and 21 seconds elapsed.
+36 minutes and 25 seconds elapsed.
+9 minutes and 18 seconds elapsed.
+1820 minutes and 54 seconds elapsed.
+37 minutes and 16 seconds elapsed. 49
+37 minutes and 30 seconds elapsed. 49
+363 minutes and 20 seconds elapsed. 50
+113 minutes and 26 seconds elapsed. 51
+1989 minutes and 21 seconds elapsed. 61
+1424 minutes and 16 seconds elapsed. 42
+261 minutes and 26 seconds elapsed. 68
+1698 minutes and 4 seconds elapsed. 76
+224 minutes and 25 seconds elapsed. 82
+219 minutes and 15 seconds elapsed. 89
+213 minutes and 27 seconds elapsed. 90
+209 minutes and 45 seconds elapsed. 91
+793 minutes and 23 seconds elapsed. 81
+230 minutes and 31 seconds elapsed. 82
+310 minutes and 12 seconds elapsed. 89
+338 minutes and 15 seconds elapsed. 90
+166 minutes and 44 seconds elapsed. 91
+308 minutes and 55 seconds elapsed.
+310 minutes and 44 seconds elapsed.
+173 minutes and 15 seconds elapsed.
+37 minutes and 46 seconds elapsed. 49
+35 minutes and 12 seconds elapsed. 49
+35 minutes and 26 seconds elapsed. 49
+265 minutes and 2 seconds elapsed. 50
+84 minutes and 58 seconds elapsed. 51
+861 minutes and 45 seconds elapsed. 61
+35 minutes and 36 seconds elapsed. 49
+43 minutes and 17 seconds elapsed. 49
+40 minutes and 47 seconds elapsed. 49
+228 minutes and 36 seconds elapsed. 68
+171 minutes and 11 seconds elapsed. 82
+249 minutes and 8 seconds elapsed. 89
+285 minutes and 17 seconds elapsed. 90
+152 minutes and 56 seconds elapsed. 91
+414 minutes and 32 seconds elapsed. 81
+260 minutes and 20 seconds elapsed. 43
+294 minutes and 30 seconds elapsed. 44
+195 minutes and 58 seconds elapsed. 46
+246 minutes and 9 seconds elapsed. 47
+414 minutes and 12 seconds elapsed. 48
+212 minutes and 47 seconds elapsed. 50
+44 minutes and 51 seconds elapsed. 51
+688 minutes and 38 seconds elapsed. 58
+42 minutes and 25 seconds elapsed. 49
+196 minutes and 42 seconds elapsed. 68
+143 minutes and 1 seconds elapsed. 82
+231 minutes and 57 seconds elapsed. 89
+260 minutes and 34 seconds elapsed. 90
+149 minutes and 27 seconds elapsed. 91
+253 minutes and 32 seconds elapsed. 43
+287 minutes and 2 seconds elapsed. 44
+182 minutes and 11 seconds elapsed. 46
+236 minutes and 22 seconds elapsed. 47
+
+
+489 minutes and 23 seconds elapsed. 20
+293 minutes and 6 seconds elapsed. 50
+43 minutes and 10 seconds elapsed. 51
+95 minutes and 45 seconds elapsed. 01
+137 minutes and 17 seconds elapsed. 06
+135 minutes and 9 seconds elapsed. 07
+8658 minutes and 5 seconds elapsed. 21
+567 minutes and 17 seconds elapsed. 22
+3146 minutes and 37 seconds elapsed. 23
+494 minutes and 19 seconds elapsed. 24
+398 minutes and 57 seconds elapsed. 25
+515 minutes and 28 seconds elapsed. 26
+3377 minutes and 31 seconds elapsed. 27
+518 minutes and 31 seconds elapsed. 28
+1946 minutes and 15 seconds elapsed. 29
+2216 minutes and 12 seconds elapsed. 30
+317 minutes and 55 seconds elapsed. 31
+233 minutes and 48 seconds elapsed. 32
+8402 minutes and 46 seconds elapsed. 33
+177 minutes and 7 seconds elapsed. 34
+356 minutes and 57 seconds elapsed. 35
+8034 minutes and 24 seconds elapsed. 36
+
+
+
+92 minutes and 26 seconds elapsed. 1
+130 minutes and 16 seconds elapsed. 6
+131 minutes and 51 seconds elapsed. 7
+233 minutes and 2 seconds elapsed. 32
+181 minutes and 38 seconds elapsed. 34
+177 minutes and 55 seconds elapsed. 46
+38 minutes and 32 seconds elapsed. 49
+41 minutes and 28 seconds elapsed. 51
+474 minutes and 6 seconds elapsed. 20
+313 minutes and 30 seconds elapsed. 31
+354 minutes and 5 seconds elapsed. 35
+1907 minutes and 13 seconds elapsed. 38
+101 minutes and 48 seconds elapsed. 39
+273 minutes and 31 seconds elapsed. 44
+
+
+28 minutes and 37 seconds elapsed. Spectra 49
+29 minutes and 34 seconds elapsed. Spectra 49
+29 minutes and 15 seconds elapsed. Spectra 49
+28 minutes and 54 seconds elapsed. Spectra 49
+32 minutes and 30 seconds elapsed. Spectra 49
+70 minutes and 7 seconds elapsed. Spectra 65
+90 minutes and 29 seconds elapsed. Spectra 01
+111 minutes and 21 seconds elapsed. Spectra 06
+106 minutes and 38 seconds elapsed. Spectra 07
+383 minutes and 10 seconds elapsed. Spectra 20
+277 minutes and 12 seconds elapsed. Spectra 31
+210 minutes and 57 seconds elapsed. Spectra 32
+178 minutes and 47 seconds elapsed. Spectra 34
+216 minutes and 19 seconds elapsed. Spectra 35
+81 minutes and 50 seconds elapsed. Spectra 39
+201 minutes and 15 seconds elapsed. Spectra 44
+128 minutes and 24 seconds elapsed. Spectra 46
+29 minutes and 40 seconds elapsed. Spectra 49
+318 minutes and 26 seconds elapsed. Spectra 25
+196 minutes and 13 seconds elapsed. Spectra 43
+166 minutes and 4 seconds elapsed. Spectra 47
+266 minutes and 43 seconds elapsed. Spectra 48
+34 minutes and 36 seconds elapsed. Spectra 51
+130 minutes and 3 seconds elapsed. Spectra 82
+190 minutes and 48 seconds elapsed. Spectra 43
+163 minutes and 38 seconds elapsed. Spectra 47
+284 minutes and 44 seconds elapsed. Spectra 48
+34 minutes and 15 seconds elapsed. Spectra 51
+125 minutes and 6 seconds elapsed. Spectra 82
+4762 minutes and 11 seconds elapsed. Spectra 10
+4388 minutes and 15 seconds elapsed. Spectra 18
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
+0 minutes and 0 seconds elapsed. Spectra 49
