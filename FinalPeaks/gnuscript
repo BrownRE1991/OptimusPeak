@@ -1,0 +1,11 @@
+set terminal postscript colour
+set output "CompareFinds.eps"
+#set xrange [100:140]
+#set yrange [140:100]
+if(order==0){plot "../Threshold/Threshold/Outlist.txt" using 2:1, "Results.txt" using 5:4 title "Models from Algorithm" lc rgb 'black', "Results.txt" using 1:($1!=0?$2:1./0.) title "Ground Truth Peak Locations" lc rgb 'red', filename u 2:3;}
+if(order==1){plot "../Threshold/Threshold/Outlist.txt" using 2:1, "Results.txt" using 5:4 title "Models from Algorithm" lc rgb 'black', "Results.txt" using 1:($1!=0?$2:1./0.) title "Ground Truth Peak Locations" lc rgb 'red', filename u 3:2;}
+set output "CompareFinds2.eps"
+#set xrange [100:140]
+#set yrange [140:100]
+if(order==0){plot "Outlist.txt" using 2:1, "Results.txt" using 5:4 title "Models from Algorithm" lc rgb 'black', "Results.txt" using 1:($1!=0?$2:1./0.) title "Ground Truth Peak Locations" lc rgb 'red', filename u 2:3;}
+if(order==1){plot "Outlist.txt" using 2:1, "Results.txt" using 5:4 title "Models from Algorithm" lc rgb 'black', "Results.txt" using 1:($1!=0?$2:1./0.) title "Ground Truth Peak Locations" lc rgb 'red', filename u 3:2;}
