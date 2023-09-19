@@ -1,0 +1,477 @@
+48
+Hills found: 70 Total ground truth hills: 93 Hills not found: 23 Hills without assignments: 34
+total number of models: 104
+extra assignments: 0
+48
+Hills found: 70 Total ground truth hills: 93 Hills not found: 23 Hills without assignments: 34
+total number of models: 104
+extra assignments: 0
+48
+Hills found: 70 Total ground truth hills: 93 Hills not found: 23 Hills without assignments: 34
+total number of models: 104
+extra assignments: 0
+Average RMSE: 0.036370183576372124
+47
+Hills found: 37 Total ground truth hills: 288 Hills not found: 251 Hills without assignments: 0
+total number of models: 37
+extra assignments: 0
+Average RMSE: 0.050326812903243236
+47
+Hills found: 33 Total ground truth hills: 288 Hills not found: 255 Hills without assignments: 42
+total number of models: 75
+extra assignments: 0
+Average RMSE: 0.04656575520199998
+47
+Hills found: 36 Total ground truth hills: 288 Hills not found: 252 Hills without assignments: 44
+total number of models: 80
+extra assignments: 0
+Average RMSE: 0.04880243746837498
+47
+Hills found: 41 Total ground truth hills: 288 Hills not found: 247 Hills without assignments: 64
+total number of models: 105
+extra assignments: 0
+Average RMSE: 0.0476482039863905
+47
+Hills found: 54 Total ground truth hills: 288 Hills not found: 234 Hills without assignments: 74
+total number of models: 128
+extra assignments: 0
+Average RMSE: 0.04636922212841411
+46
+Hills found: 5 Total ground truth hills: 230 Hills not found: 225 Hills without assignments: 10
+total number of models: 15
+extra assignments: 0
+Average RMSE: 0.06544503236933333
+46
+Hills found: 0 Total ground truth hills: 230 Hills not found: 230 Hills without assignments: 15
+total number of models: 15
+extra assignments: 0
+Average RMSE: 0.06544503236933333
+48
+Hills found: 47 Total ground truth hills: 93 Hills not found: 46 Hills without assignments: 52
+total number of models: 99
+extra assignments: 0
+Average RMSE: 0.03363988769900405
+47
+Models Assigned: 65 Total ground truth hills: 288 Hills not found: 223 Hills without assignments: 80
+total number of models: 145
+GroundTruth Assigned:65
+extra assignments: 0
+Average RMSE: 0.048290927920551785
+49
+Models Assigned: 0 Total ground truth hills: 93 Hills not found: 93 Hills without assignments: 66
+total number of models: 66
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03423213234992425
+61
+Models Assigned: 0 Total ground truth hills: 132 Hills not found: 132 Hills without assignments: 150
+total number of models: 150
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.020627023083540665
+49
+Models Assigned: 72 Total ground truth hills: 93 Hills not found: 21 Hills without assignments: 2
+total number of models: 66
+GroundTruth Assigned: 64
+extra assignments: 0
+Average RMSE: 0.03336889488071212
+50
+Models Assigned: 0 Total ground truth hills: 27 Hills not found: 27 Hills without assignments: 52
+total number of models: 52
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04727951602271155
+50
+Models Assigned: 0 Total ground truth hills: 27 Hills not found: 27 Hills without assignments: 55
+total number of models: 55
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.047508926403836374
+50
+Models Assigned: 0 Total ground truth hills: 27 Hills not found: 27 Hills without assignments: 70
+total number of models: 70
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.039431772268862866
+51
+Models Assigned: 0 Total ground truth hills: 29 Hills not found: 29 Hills without assignments: 25
+total number of models: 25
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.0517764620492
+61
+Models Assigned: 52 Total ground truth hills: 132 Hills not found: 80 Hills without assignments: 41
+total number of models: 93
+GroundTruth Assigned: 52
+extra assignments: 0
+Average RMSE: 0.02486418991336107
+49
+Models Assigned: 65 Total ground truth hills: 93 Hills not found: 28 Hills without assignments: 2
+total number of models: 60
+GroundTruth Assigned: 58
+extra assignments: 0
+Average RMSE: 0.03362992987381666
+42
+Models Assigned: 4 Total ground truth hills: 211 Hills not found: 207 Hills without assignments: 53
+total number of models: 56
+GroundTruth Assigned: 3
+extra assignments: 0
+Average RMSE: 0.05828852787867856
+68
+Models Assigned: 33 Total ground truth hills: 122 Hills not found: 89 Hills without assignments: 88
+total number of models: 120
+GroundTruth Assigned: 32
+extra assignments: 0
+Average RMSE: 0.028402502800028248
+68
+Models Assigned: 33 Total ground truth hills: 122 Hills not found: 89 Hills without assignments: 88
+total number of models: 120
+GroundTruth Assigned: 32
+extra assignments: 0
+Average RMSE: 0.028402502800028248
+76
+Models Assigned: 21 Total ground truth hills: 170 Hills not found: 149 Hills without assignments: 10
+total number of models: 31
+GroundTruth Assigned: 21
+extra assignments: 0
+Average RMSE: 0.05859330826580645
+82
+Models Assigned: 45 Total ground truth hills: 93 Hills not found: 48 Hills without assignments: 64
+total number of models: 106
+GroundTruth Assigned: 42
+extra assignments: 0
+Average RMSE: 0.040520702582794346
+68
+Models Assigned: 24 Total ground truth hills: 122 Hills not found: 98 Hills without assignments: 145
+total number of models: 166
+GroundTruth Assigned: 21
+extra assignments: 0
+Average RMSE: 0.0324557243660753
+68
+Models Assigned: 39 Total ground truth hills: 122 Hills not found: 83 Hills without assignments: 187
+total number of models: 223
+GroundTruth Assigned: 36
+extra assignments: 0
+Average RMSE: 0.027677682638074425
+49
+Models Assigned: 70 Total ground truth hills: 93 Hills not found: 23 Hills without assignments: 0
+total number of models: 62
+GroundTruth Assigned: 62
+extra assignments: 0
+Average RMSE: 0.034406843001693534????????
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 2
+total number of models: 65
+GroundTruth Assigned: 63
+extra assignments: 0
+Average RMSE: 0.031824807581907685
+50
+Models Assigned: 1 Total ground truth hills: 27 Hills not found: 26 Hills without assignments: 65
+total number of models: 66
+GroundTruth Assigned: 1
+extra assignments: 0
+Average RMSE: 0.03214026869944393
+51
+Models Assigned: 0 Total ground truth hills: 29 Hills not found: 29 Hills without assignments: 26
+total number of models: 26
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.05431180530730769
+61
+Models Assigned: 108 Total ground truth hills: 132 Hills not found: 24 Hills without assignments: 43
+total number of models: 143
+GroundTruth Assigned: 100
+extra assignments: 0
+Average RMSE: 0.021892024913244053
+42
+Models Assigned: 5 Total ground truth hills: 211 Hills not found: 206 Hills without assignments: 66
+total number of models: 68
+GroundTruth Assigned: 2
+extra assignments: 0
+Average RMSE: 0.05900322126373528
+68
+Models Assigned: 38 Total ground truth hills: 122 Hills not found: 84 Hills without assignments: 101
+total number of models: 138
+GroundTruth Assigned: 37
+extra assignments: 0
+Average RMSE: 0.029664273178500507
+76
+Models Assigned: 120 Total ground truth hills: 170 Hills not found: 50 Hills without assignments: 34
+total number of models: 140
+GroundTruth Assigned: 106
+extra assignments: 0
+Average RMSE: 0.02687342126812272
+82
+Models Assigned: 74 Total ground truth hills: 93 Hills not found: 19 Hills without assignments: 19
+total number of models: 83
+GroundTruth Assigned: 64
+extra assignments: 0
+Average RMSE: 0.03493668386971566
+89
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 82
+total number of models: 82
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.0335296690709439
+90
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 82
+total number of models: 82
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03564709668726464
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 82
+total number of models: 82
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03657056428847803
+81
+Models Assigned: 0 Total ground truth hills: 100 Hills not found: 100 Hills without assignments: 117
+total number of models: 117
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.031756555077069225
+82
+Models Assigned: 75 Total ground truth hills: 93 Hills not found: 18 Hills without assignments: 17
+total number of models: 83
+GroundTruth Assigned: 66
+extra assignments: 0
+Average RMSE: 0.03323580345569278
+89
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 164
+total number of models: 164
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.05183482034089633
+90
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 46
+total number of models: 46
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.11624722360391304
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 103
+total number of models: 103
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.024117317203133974
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 103
+total number of models: 103
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.024117317203133974
+89
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 160
+total number of models: 160
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.05543336381319377
+90
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 49
+total number of models: 49
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.12106903046612244
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 99
+total number of models: 99
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.023750019396095952
+
+
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 0
+total number of models: 65
+GroundTruth Assigned: 65
+extra assignments: 0
+Average RMSE: 0.031402367027876917
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 0
+total number of models: 66
+GroundTruth Assigned: 66
+extra assignments: 0
+Average RMSE: 0.030234595536939395
+50
+Models Assigned: 0 Total ground truth hills: 27 Hills not found: 27 Hills without assignments: 45
+total number of models: 45
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.036925117698200005
+51
+Models Assigned: 0 Total ground truth hills: 29 Hills not found: 29 Hills without assignments: 30
+total number of models: 30
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03163251544600667
+61
+Models Assigned: 114 Total ground truth hills: 132 Hills not found: 18 Hills without assignments: 42
+total number of models: 153
+GroundTruth Assigned: 111
+extra assignments: 0
+Average RMSE: 0.019098261490987582
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 2
+total number of models: 68
+GroundTruth Assigned: 66
+extra assignments: 0
+Average RMSE: 0.02956586698013235
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 2
+total number of models: 67
+GroundTruth Assigned: 65
+extra assignments: 0
+Average RMSE: 0.03021727476238805
+49
+Models Assigned: 72 Total ground truth hills: 93 Hills not found: 21 Hills without assignments: 2
+total number of models: 68
+GroundTruth Assigned: 66
+extra assignments: 0
+Average RMSE: 0.03004061769464706
+68
+Models Assigned: 39 Total ground truth hills: 122 Hills not found: 83 Hills without assignments: 110
+total number of models: 149
+GroundTruth Assigned: 39
+extra assignments: 0
+Average RMSE: 0.022175153594697995
+82
+Models Assigned: 80 Total ground truth hills: 93 Hills not found: 13 Hills without assignments: 20
+total number of models: 94
+GroundTruth Assigned: 74
+extra assignments: 0
+Average RMSE: 0.02306988616481491
+89
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 247
+total number of models: 247
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04962006545859962
+90
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 79
+total number of models: 79
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.10351514822740178
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 102
+total number of models: 102
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.02150395611079804
+81
+Models Assigned: 0 Total ground truth hills: 100 Hills not found: 100 Hills without assignments: 135
+total number of models: 135
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.02747946965200742
+43
+Models Assigned: 0 Total ground truth hills: 165 Hills not found: 165 Hills without assignments: 141
+total number of models: 141
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03699925209078015
+44
+Models Assigned: 0 Total ground truth hills: 244 Hills not found: 244 Hills without assignments: 173
+total number of models: 173
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.039650889290861274
+46
+Models Assigned: 0 Total ground truth hills: 230 Hills not found: 230 Hills without assignments: 150
+total number of models: 150
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.036833291184986676
+47
+Models Assigned: 0 Total ground truth hills: 288 Hills not found: 288 Hills without assignments: 156
+total number of models: 156
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04189338694791023
+48
+Models Assigned: 0 Total ground truth hills: 93 Hills not found: 93 Hills without assignments: 124
+total number of models: 124
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.0278047922139863
+50
+Models Assigned: 0 Total ground truth hills: 27 Hills not found: 27 Hills without assignments: 61
+total number of models: 61
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.03301006693660656
+51
+Models Assigned: 0 Total ground truth hills: 29 Hills not found: 29 Hills without assignments: 31
+total number of models: 31
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.032021795618064515
+58
+Models Assigned: 128 Total ground truth hills: 243 Hills not found: 115 Hills without assignments: 26
+total number of models: 146
+GroundTruth Assigned: 120
+extra assignments: 0
+Average RMSE: 0.0400621303689178
+
+#New combine 1.0
+49
+Models Assigned: 71 Total ground truth hills: 93 Hills not found: 22 Hills without assignments: 1
+total number of models: 66
+GroundTruth Assigned: 65
+extra assignments: 0
+Average RMSE: 0.031867884234227276
+68
+Models Assigned: 35 Total ground truth hills: 122 Hills not found: 87 Hills without assignments: 87
+total number of models: 122
+GroundTruth Assigned: 35
+extra assignments: 0
+Average RMSE: 0.02876150410272132
+82
+Models Assigned: 70 Total ground truth hills: 93 Hills not found: 23 Hills without assignments: 14
+total number of models: 79
+GroundTruth Assigned: 65
+extra assignments: 0
+Average RMSE: 0.031886774263481014
+89
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 185
+total number of models: 185
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.06661600753224053
+90
+Models Assigned: 0 Total ground truth hills: 4839 Hills not found: 4839 Hills without assignments: 71
+total number of models: 71
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.10814879821661637
+91
+Models Assigned: 0 Total ground truth hills: 1501 Hills not found: 1501 Hills without assignments: 96
+total number of models: 96
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.023446094907479162
+43
+Models Assigned: 0 Total ground truth hills: 165 Hills not found: 165 Hills without assignments: 126
+total number of models: 126
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.039937004685396835
+44
+Models Assigned: 0 Total ground truth hills: 244 Hills not found: 244 Hills without assignments: 169
+total number of models: 169
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04161590485715975
+46
+Models Assigned: 0 Total ground truth hills: 230 Hills not found: 230 Hills without assignments: 137
+total number of models: 137
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04109558822832115
+47
+Models Assigned: 0 Total ground truth hills: 288 Hills not found: 288 Hills without assignments: 144
+total number of models: 144
+GroundTruth Assigned: 0
+extra assignments: 0
+Average RMSE: 0.04487259730923612

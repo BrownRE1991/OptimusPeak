@@ -1,0 +1,379 @@
+data_default
+
+
+   save_nef_nmr_meta_data
+
+      _nef_nmr_meta_data.sf_category      nef_nmr_meta_data
+      _nef_nmr_meta_data.sf_framecode     nef_nmr_meta_data
+      _nef_nmr_meta_data.format_name      nmr_exchange_format
+      _nef_nmr_meta_data.format_version   1.1
+      _nef_nmr_meta_data.program_name     AnalysisAssign
+      _nef_nmr_meta_data.program_version  3.1.0
+      _nef_nmr_meta_data.creation_date    2022-11-08T16:01:48.432332
+      _nef_nmr_meta_data.uuid             AnalysisAssign-2022-11-08T16:01:48.432332-288545018
+      _nef_nmr_meta_data.coordinate_file_name  .
+
+      loop_
+         _nef_program_script.program_name
+         _nef_program_script.script_name
+         _nef_program_script.script
+
+         CcpNmr  exportProject  .
+      stop_
+   save_
+
+
+   save_nef_molecular_system
+
+      _nef_molecular_system.sf_category   nef_molecular_system
+      _nef_molecular_system.sf_framecode  nef_molecular_system
+   save_
+
+
+   save_nef_nmr_spectrum_XP_AQP1UCN_2DCC_HORROR7ms_H2O_20181207_80ppm_GM80_80`137`
+
+      _nef_nmr_spectrum.sf_category                   nef_nmr_spectrum
+      _nef_nmr_spectrum.sf_framecode                  nef_nmr_spectrum_XP_AQP1UCN_2DCC_HORROR7ms_H2O_20181207_80ppm_GM80_80`137`
+      _nef_nmr_spectrum.num_dimensions                2
+      _nef_nmr_spectrum.chemical_shift_list           nef_chemical_shift_list_default
+      _nef_nmr_spectrum.experiment_classification     .
+      _nef_nmr_spectrum.experiment_type               XP_AQP1UCN_2DCC_HORROR7ms_H2O_20181207_80ppm_GM80_80
+      _nef_nmr_spectrum.ccpn_reference_experiment_dimensions  '(None, None)'
+      _nef_nmr_spectrum.ccpn_positive_contour_count   10
+      _nef_nmr_spectrum.ccpn_positive_contour_base    137545.0177
+      _nef_nmr_spectrum.ccpn_positive_contour_factor  1.41
+      _nef_nmr_spectrum.ccpn_positive_contour_colour  '#008080'
+      _nef_nmr_spectrum.ccpn_negative_contour_count   10
+      _nef_nmr_spectrum.ccpn_negative_contour_base    -137545.0177
+      _nef_nmr_spectrum.ccpn_negative_contour_factor  1.41
+      _nef_nmr_spectrum.ccpn_negative_contour_colour  '#DA70D6'
+      _nef_nmr_spectrum.ccpn_slice_colour             '#008080'
+      _nef_nmr_spectrum.ccpn_spectrum_scale           1
+      _nef_nmr_spectrum.ccpn_spinning_rate            .
+      _nef_nmr_spectrum.ccpn_spectrum_comment         ''
+      _nef_nmr_spectrum.ccpn_spectrum_file_path       /Users/pixie/Desktop/OptmizationExperiments/GoodnessOfFitTests/Threshold/XP_AQP1UCN_2DCC_HORROR7ms_H2O_20181207_80ppm_GM80_80.ft2
+      _nef_nmr_spectrum.ccpn_file_type                NMRPipe
+      _nef_nmr_spectrum.ccpn_file_scale_factor        1
+      _nef_nmr_spectrum.ccpn_sample                   .
+      _nef_nmr_spectrum.ccpn_peaklist_serial          1
+      _nef_nmr_spectrum.ccpn_peaklist_comment         ''
+      _nef_nmr_spectrum.ccpn_peaklist_name            .
+      _nef_nmr_spectrum.ccpn_peaklist_is_simulated    false
+      _nef_nmr_spectrum.ccpn_peaklist_symbol_colour   '#7a7a7a'
+      _nef_nmr_spectrum.ccpn_peaklist_symbol_style    cross
+      _nef_nmr_spectrum.ccpn_peaklist_text_colour     '#7a7a7a'
+      _nef_nmr_spectrum.ccpn_file_header_size         512
+      _nef_nmr_spectrum.ccpn_file_number_type         float
+      _nef_nmr_spectrum.ccpn_file_is_big_endian       false
+      _nef_nmr_spectrum.ccpn_file_byte_number         4
+      _nef_nmr_spectrum.ccpn_file_block_header_size   0
+
+      loop_
+         _nef_spectrum_dimension.dimension_id
+         _nef_spectrum_dimension.axis_unit
+         _nef_spectrum_dimension.axis_code
+         _nef_spectrum_dimension.spectrometer_frequency
+         _nef_spectrum_dimension.spectral_width
+         _nef_spectrum_dimension.value_first_point
+         _nef_spectrum_dimension.folding
+         _nef_spectrum_dimension.absolute_peak_positions
+         _nef_spectrum_dimension.is_acquisition
+         _nef_spectrum_dimension.ccpn_axis_code
+
+         1  ppm      loop_
+         _ccpn_spectrum_dimension.dimension_id
+         _ccpn_spectrum_dimension.point_count
+         _ccpn_spectrum_dimension.reference_point
+         _ccpn_spectrum_dimension.total_point_count
+         _ccpn_spectrum_dimension.assignment_tolerance
+         _ccpn_spectrum_dimension.lower_aliasing_limit
+         _ccpn_spectrum_dimension.higher_aliasing_limit
+         _ccpn_spectrum_dimension.measurement_type
+         _ccpn_spectrum_dimension.phase_0
+         _ccpn_spectrum_dimension.phase_1
+         _ccpn_spectrum_dimension.window_function
+         _ccpn_spectrum_dimension.lorentzian_broadening
+         _ccpn_spectrum_dimension.gaussian_broadening
+         _ccpn_spectrum_dimension.sine_window_shift
+
+         1  292  .  .  0.03  6.388301728  9.811042656  Shift  -67.59999847  -36.40000153  .  .  .  .
+         2  512  .  .  0.4   103.6990426  133.3087859  Shift  0             0             .  .  .  .
+      stop_
+
+      loop_
+         _nef_spectrum_dimension_transfer.dimension_1
+         _nef_spectrum_dimension_transfer.dimension_2
+         _nef_spectrum_dimension_transfer.transfer_type
+         _nef_spectrum_dimension_transfer.is_indirect
+
+      stop_
+
+      loop_
+         _nef_peak.index
+         _nef_peak.peak_id
+         _nef_peak.volume
+         _nef_peak.volume_uncertainty
+         _nef_peak.height
+         _nef_peak.height_uncertainty
+         _nef_peak.position_1
+         _nef_peak.position_uncertainty_1
+         _nef_peak.position_2
+         _nef_peak.position_uncertainty_2
+         _nef_peak.chain_code_1
+         _nef_peak.sequence_code_1
+         _nef_peak.residue_name_1
+         _nef_peak.atom_name_1
+         _nef_peak.chain_code_2
+         _nef_peak.sequence_code_2
+         _nef_peak.residue_name_2
+         _nef_peak.atom_name_2
+         _nef_peak.ccpn_figure_of_merit
+         _nef_peak.ccpn_linked_integral
+         _nef_peak.ccpn_annotation
+         _nef_peak.ccpn_comment
+         _nef_peak.ccpn_peak_list_serial
+
+         1  1  2632.735447  .  67687.968  .  8.387622  .  112.043695  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         2  2  2449.926658  .  37809.375  .  7.838984  .  121.986707  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         3  3  2177.926947  .  55606.264  .  7.779451  .  115.502583  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         4  4  1392.113883  .  42114.264  .  7.174517  .  119.614746  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         5  5  2140.767934  .  44927.263  .  9.340614  .  126.804261  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         6  6  2444.834014  .  58004.137  .  9.234944  .  122.269864  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         7  7  2063.656689  .  42960.745  .  9.167573  .  121.944922  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         8  8  2481.945487  .  62583.076  .  7.808739  .  107.361363  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         9  9  3628.857919  .  24355.038  .  8.406442  .  113.396086  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         10  10  4197.812145  .  125805.491  .  7.609274  .  114.913325  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         11  11  2815.335344  .  88070.846  .  7.581462  .  112.637461  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         12  12  3761.405156  .  51784.619  .  9.401149  .  126.156382  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         13  13  -4901.140911  .  -14745.314  .  7.372331  .  114.588899  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         14  14  3428.472433  .  91114.377  .  7.966255  .  124.087927  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         15  15  2747.920289  .  59118.912  .  8.015554  .  121.250340  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         16  16  3157.430663  .  87211.291  .  9.389958  .  118.487455  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         17  17  1982.937827  .  48966.566  .  8.625033  .  123.500827  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         18  18  2488.352715  .  60116.894  .  7.241292  .  112.056180  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         19  19  2914.896782  .  71612.257  .  7.396588  .  122.080855  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         20  20  -1855.779481  .  -38545.917  .  9.335190  .  132.661493  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         21  21  -2345.809988  .  -46026.446  .  7.727452  .  133.906282  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         22  22  1289.864831  .  27593.975  .  7.959018  .  116.263396  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         23  23  2452.348126  .  59541.585  .  8.909173  .  115.095212  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         24  24  1123.726885  .  26699.126  .  7.775708  .  122.534357  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         25  25  2816.692908  .  73249.344  .  8.788697  .  125.781232  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         26  26  1984.489066  .  35790.164  .  7.836492  .  120.288483  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         27  27  1727.394494  .  38547.371  .  8.330303  .  112.938192  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         28  28  2740.639164  .  75937.435  .  6.898854  .  112.630456  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         29  29  2861.845771  .  69207.515  .  7.688210  .  119.713279  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         30  30  4017.10055  .  30861.641  .  7.073473  .  116.865715  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         31  31  1481.170555  .  34691.548  .  8.967651  .  124.559647  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         32  32  -4136.688287  .  -10830.227  .  7.260125  .  114.517013  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         33  33  2619.398715  .  60038.811  .  8.992998  .  119.987101  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         34  34  1799.52537  .  40340.101  .  9.683641  .  114.564118  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         35  35  1730.683404  .  39660.859  .  8.905770  .  119.333423  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         36  36  5802.833351  .  44225.868  .  9.161127  .  131.228424  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         37  37  3189.776442  .  59879.688  .  9.041612  .  126.950109  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         38  38  2274.877537  .  52589.672  .  8.092784  .  115.292320  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         39  39  2176.82544  .  38767.33  .  8.663370  .  119.269886  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         40  40  12837.22148  .  86934.736  .  8.428044  .  123.624125  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         41  41  2059.217048  .  46529.599  .  7.603722  .  108.023691  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         42  42  11324.42195  .  66005.356  .  8.447590  .  116.624661  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         43  43  7491.394411  .  50627.018  .  8.718505  .  124.259637  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         44  44  10544.54925  .  54314.461  .  8.355291  .  122.200282  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         45  45  2638.353487  .  70515.923  .  7.746942  .  124.272522  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         46  46  1709.824927  .  24451.917  .  9.154569  .  125.703485  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         47  47  1966.707724  .  39567.847  .  8.534676  .  118.396580  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         48  48  4173.631309  .  32410.151  .  8.241343  .  125.037354  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         49  49  1680.792659  .  32821.945  .  8.630778  .  114.649530  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         50  50  9685.442363  .  108834.774  .  8.478213  .  126.210056  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         51  51  10519.94107  .  86221.258  .  8.276241  .  122.283728  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         52  52  4150.289386  .  18892.403  .  8.010193  .  114.079909  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         53  53  9147.565756  .  71714.156  .  8.432730  .  118.542123  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         54  54  2414.34317  .  51400.879  .  7.558825  .  120.353558  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         55  55  937.1776335  .  20149.411  .  7.580148  .  116.525589  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         56  56  6125.385226  .  35526.197  .  9.969695  .  129.553881  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         57  57  8006.606534  .  46972.395  .  8.918323  .  121.653957  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         58  58  14219.3932  .  51343.321  .  8.363080  .  117.853178  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         59  59  8047.838793  .  57760.278  .  8.380285  .  127.541750  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         60  60  6512.992492  .  59759.794  .  9.088494  .  120.408592  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         61  61  7623.087126  .  58880.625  .  9.554551  .  129.921634  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         62  62  4053.105197  .  18713.444  .  8.330439  .  125.711347  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         63  63  7000.163599  .  86468.931  .  8.837668  .  123.390971  .  .  .  .  .  .  .  .  .  1  .  .  .  1
+         64  64  4138.576161  .  53095.539  .  8.604732  .  130.495277  .  .  .  .  .  .  .  .  .  1  .  .  .  1      stop_
+
+      loop_
+         _ccpn_spectrum_reference_substances.serial
+         _ccpn_spectrum_reference_substances.name
+         _ccpn_spectrum_reference_substances.labelling
+
+      stop_
+   save_
+
+
+   save_ccpn_assignment
+
+      _ccpn_assignment.sf_category   ccpn_assignment
+      _ccpn_assignment.sf_framecode  ccpn_assignment
+
+      loop_
+         _nmr_chain.short_name
+         _nmr_chain.serial
+         _nmr_chain.label
+         _nmr_chain.is_connected
+         _nmr_chain.comment
+
+         @-  1  @-  false  'Default NmrChain, used for ResonanceGroups not in other chains. Cannot be deleted or renamed.'
+      stop_
+
+      loop_
+         _nmr_residue.chain_code
+         _nmr_residue.sequence_code
+         _nmr_residue.residue_name
+         _nmr_residue.serial
+         _nmr_residue.comment
+
+      stop_
+
+      loop_
+         _nmr_atom.chain_code
+         _nmr_atom.sequence_code
+         _nmr_atom.serial
+         _nmr_atom.name
+         _nmr_atom.isotope_code
+         _nmr_atom.comment
+
+      stop_
+   save_
+
+
+   save_ccpn_additional_data
+
+      _ccpn_additional_data.sf_category   ccpn_additional_data
+      _ccpn_additional_data.sf_framecode  ccpn_additional_data
+
+      loop_
+         _ccpn_internal_data.ccpn_object_pid
+         _ccpn_internal_data.internal_data_string
+
+         PeakList:sbw_15Nsbw_hsqc.1             
+;{
+  "_ccpNmrV3internal": {
+    "meritEnabled": false
+  }
+}
+;
+         Spectrum:sbw_15Nsbw_hsqc               
+;{
+  "_ccpNmrV3internal": {
+    "_dataStore": "[\n  [\n    \"_metadata\",\n    {\n      \"jsonVersion\": 3.0,\n      \"className\": \"DataStore\",\n      \"classVersion\": 1.0,\n      \"user\": \"pixie\",\n      \"lastPath\": \"undefined\",\n      \"timestamp\": \"Tue Nov  8 16:00:06 2022\"\n    }\n  ],\n  [\n    \"_path\",\n    \"/Users/pixie/Desktop/OptmizationExperiments/GoodnessOfFitTests/Threshold/sbw_15Nsbw_hsqc.pipe\"\n  ],\n  [\n    \"dataFormat\",\n    \"NMRPipe\"
+  ],\n  [\n    \"useBuffer\",\n    false\n  ],\n  [\n    \"apiDataStoreName\",\n    null\n  ],\n  [\n    \"apiDataStoreDir\",\n    null\n  ],\n  [\n    \"apiDataStorePath\",\n    null\n  ],\n  [\n    \"pathRedirections\",\n    {\n      \"$DATA\": \"/Users/pixie\",\n      \"$ALONGSIDE\": \"/var/folders/0x/0l2f0y556yb8y93bz73ml9vc0000gn/T/CcpnProject_5ipvu0ul.ccpn\",\n      \"$INSIDE\": \"/var/folders/0x/0l2f0y556yb8y93bz73ml9vc0000gn/T/CcpnProject_5ipvu0ul.ccpn/default\"\n    }\n  ]\n]",    "_peakPickerParameters": "[
+  [
+    "_metadata",
+    {
+      "jsonVersion": 3.0,
+      "className": "PeakPickerNd",
+      "classVersion": 1.0,
+      "user": "pixie",
+      "lastPath": "undefined",
+      "timestamp": "Tue Nov  8 16:00:06 2022"
+    }
+  ],
+  [
+    "dimensionCount",
+    2
+  ],
+  [
+    "pointExtension",
+    1
+  ],
+  [
+    "autoFit",
+    false
+  ],
+  [
+    "dropFactor",
+    0.1
+  ],
+  [
+    "fitMethod",
+    "parabolic"
+  ],
+  [
+    "positiveThreshold",
+    10000.0
+  ],
+  [
+    "negativeThreshold",
+    -10000.0
+  ],
+  [
+    "noise",
+    null
+  ],
+  [
+    "minimumLineWidth",
+    []
+  ],
+  [
+    "checkAllAdjacent",
+    true
+  ],
+  [
+    "singularMode",
+    true
+  ],
+  [
+    "halfBoxFindPeaksWidth",
+    4
+  ],
+  [
+    "halfBoxSearchWidth",
+    4
+  ],
+  [
+    "halfBoxFitWidth",
+    4
+  ],
+  [
+    "searchBoxDoFit",
+    true
+  ],
+  [
+    "setLineWidths",
+    true
+  ],
+  [
+    "searchBoxMode",
+    true
+  ],
+  [
+    "searchBoxWidths",
+    {}
+  ]
+]",
+    "_preferredAxisOrdering": [
+      0,
+      1
+    ],
+    "negativeNoiseLevel": -97549.6579384697
+  }
+}
+;
+         SpectrumReference:sbw_15Nsbw_hsqc.1.1  
+;{
+  "_ccpNmrV3internal": {
+    "dimensionType": "Frequency",
+    "foldingMode": "circular"
+  }
+}
+;
+         SpectrumReference:sbw_15Nsbw_hsqc.2.1  
+;{
+  "_ccpNmrV3internal": {
+    "dimensionType": "Frequency",
+    "foldingMode": "circular"
+  }
+}
+;
+      stop_
+   save_
+
+
+# End of data_default
