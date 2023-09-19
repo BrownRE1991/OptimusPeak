@@ -32,7 +32,7 @@ chmod +x RunEval.sh
 cd ..
 
 cd Threshold
-./Run2.sh 49 6 #37 mins
+./Run2.sh $PWD/Spectra/ThresholdingTestSpec049_mth1743_Nhsqc.ft2 $PWD/../Test.csv 6 #37 mins
 #./Run2.sh 20 6 #383 mins
 cd ..
 
