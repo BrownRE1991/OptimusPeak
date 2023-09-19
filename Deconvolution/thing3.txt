@@ -1,0 +1,27 @@
+numOfPoints: 332
+dim: 2
+Inside K-models
+172.822 127.509 
+173.342 127.82 
+172.971 127.672 3.65279e+06 
+0.54445 0.20751 
+Here4
+Dim: 2
+Height: 3.65279e+06 Alpha: 0
+172.967 127.677 
+0.539918 0.235911 
+Fitness: 0.190834
+Here5
+Repeat 1
+k: 1
+Dim: 2
+Height: 3.65279e+06 Alpha: 0
+172.972 127.687 
+0.539698 0.240959 
+Fitness: 0.187118
+Checking linewidths
+Checking Range
+Checking fitness
+All done
+1
+1
