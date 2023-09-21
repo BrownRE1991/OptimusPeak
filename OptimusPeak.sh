@@ -1,7 +1,22 @@
 #!/bin/bash
 
-current=$PWD
-echo $current
+#current=$PWD
+#echo $current
+
+op=$(uname)
+case $op in 
+
+	'Linux')
+	echo "Linux"
+	;;
+	
+	'Darwin')
+	echo "Darwin"
+	;;
+	*)
+	echo "Operating System not currently supported. Please email author if you want your operating system added."
+	;;
+esac
 
 spectrum=$1
 output=$2

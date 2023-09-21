@@ -28,7 +28,7 @@ do
 			fi
 			./K-models Datasets/outASRG$w.txt $2 >> thing$2.txt
 			if [ -f "genes$2.txt" ]; then
-				cp -fr genes$2.txt Models_Decon/Models_2ASRG$w.txt
+				#cp -fr genes$2.txt Models_Decon/Models_2ASRG$w.txt
 				cp -fr genes$2.txt ../FinalPeaks/Models_Decon/Models_2ASRG$w.txt
 			fi
 		fi
