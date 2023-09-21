@@ -1,36 +1,13 @@
-//#include <cmath>
-//#include <list> 
-//#include <sstream>
-//#include <vector>
-//#include <iostream>
-//#include <fstream>
-//#include "peaks.h"
-//#include "stat.h"
-//#include <time.h>
-//#include <cstring>
 #include <thread>
 #include "DELibrary.h"
-//#include "RegressionLib.h"
 
-void tokenize(std::string const str, const char delim, std::vector<double> * out);
 void ReadData(string input1, list <std::vector<double> > * listOfPoints);
-//void outputDataset(double ** data, int numOfPoints, int dim, string filename);
-vector <double> findMaxSecond(vector <std::vector<double> > & listOfPoints, int numOfPoints, int dim, vector <double> currentMax, vector <double> widths);
-double dist(vector <double> vec1, vector <double> vec2);
 vector <double> findApproxLinewidth(list <std::vector<double> >  listOfPoints, int numOfPoints, int dim, vector <double> currentMax);
 double findMin(vector <std::vector<double> > & listOfPoints, int numOfPoints, int dim);
-vector <double> findMax(vector <std::vector<double> > & listOfPoints, int numOfPoints, int dim);
 vector <double> findMaxOther(vector <std::vector<double> > & listOfPoints, int numOfPoints, int dim, vector < vector <double> > currentMax, vector < vector <double> > widths);
 std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints, int dim, int k, vector < vector <double> > maxs, vector < vector <double> > widths, double cutoff, double Thresh);
-double dist(vector <double> vec1, double * vec2);
-void outputVector(vector < vector <double> > data, string filename, int size);
-void outputVector2(vector < vector <double> > & data, string filename, int size, int dim);
-void outputDatasetClustersV1(vector < vector <double> > & data, int numOfPoints, int dim, std::vector <std::vector <std::vector <double> > > clusters);
-void outputDatasetClustersV2(vector < vector <double> > & data, int numOfPoints, int dim, std::vector <std::vector <std::vector <double> > > clusters);
-void outputVector3(vector < vector <double> > & data, string filename, int size, int dim);
 void removeElement(std::vector<gene>& vec, int index);
 void removeElement(vector < vector <double> >& vec, int index);
-void outputDataset(vector <vector <double> > & data, int numOfPoints, int dim, string filename);
 
 int main(int argc, const char * argv[])
 {
@@ -51,7 +28,6 @@ int main(int argc, const char * argv[])
     {
         file = stoi(argv[2]);
     }
-    //cout << filename << endl;
     ReadData(filename, &listOfPoints);
     dim = (int)(listOfPoints.begin()->size() - 1);
 	if(dim == -1)
@@ -89,23 +65,6 @@ int main(int argc, const char * argv[])
         }
      }
 	 numOfPoints2 = int(listOfPoints2.size());
-	 //cout << listOfPoints2.size() << "\n";
-
-    // double ** data = nullptr;
-//     data = (double**)malloc((listOfPoints.size())*sizeof(double*));
-//     if(data != nullptr)
-//     {
-//         for(int x = 0; x < listOfPoints.size(); x++)
-//         {
-//             data[x] = nullptr;
-//             data[x] = (double*)malloc((dim+1)*sizeof(double));
-//             if(data[x] == nullptr)
-//             {
-//                 cout << "Memory Error\n";
-//                 return(1);
-//             }
-//         }
-//     }
 	
     int count1 = 0;
     int count2 = 0;
@@ -116,31 +75,11 @@ int main(int argc, const char * argv[])
 		{
 		 	minIntensity = abs(it->at(dim));
 		}
-       // if((count1 < numOfPoints))
-//        {
-//            count2 = 0;
-//            for (it2 = it->begin(); it2 != it->end(); it2++)
-//            {
-//                if(count2 <= dim)
-//                {
-//                    if(count1 < numOfPoints)
-//                    {
-//                        data[count1][count2] = *it2;
-//                        count2++;
-//                    }
-//                }
-//            }
-//        }
-//        count1++;
     }
-	//cout << "Here " << minIntensity << "\n";
-	 
-	outputDataset(listOfPoints, numOfPoints2, dim, "CurrentData.txt");
 	 
 	vector < vector <double> > maxs;
 	vector < vector <double> > widths;
-	maxs.push_back(findMax(listOfPoints2, numOfPoints2, dim));
-	//cout << "HERE4\n";	
+	maxs.push_back(findMax(listOfPoints2, numOfPoints2, dim));	
 	while((maxs[maxs.size()-1][0] > -10000000.0) && (maxs[maxs.size()-1][1] > -10000000.0))
 	{
 		if(dim == 3)
@@ -157,7 +96,6 @@ int main(int argc, const char * argv[])
 			maxs.push_back(findMaxOther(listOfPoints2, numOfPoints2, dim, maxs, widths));
 		}
 	}
-	//cout << "HERE6\n";
 	
 	vector < vector <double> > widthsOutput;
 	vector <double> temp;
@@ -180,12 +118,7 @@ int main(int argc, const char * argv[])
 		widthsOutput.push_back(temp);
 	}
 	
-	//outputVector(maxs, "maxs.txt", int(widths.size()));
-	//outputVector2(widthsOutput, "widths.txt", int(widths.size()), dim);
-	//outputVector3(widthsOutput, "widths2.txt", int(widths.size()), dim);
-	
 	int startingK =  int(widths.size());
-	//cout << "startingK: " << startingK << "\n";
 	
 	//Put k-models here using the starting K, and then remove those models from the dataset and repeat.
 	std::vector <gene> results;
@@ -193,14 +126,8 @@ int main(int argc, const char * argv[])
 	//Maybe do something else: Partition, fit give only a fraction of each point to each model, refit, repeat until convergence
 	results = kmodels(listOfPoints, numOfPoints, dim, startingK, maxs, widths, cutoff, minIntensity);
 	string outfile = "genes" + to_string(file) + ".txt";
-	//cout << outfile << endl;
 	printGenestoFile(results, outfile, 0.2);
 	
-    // for(int x = 0; x < numOfPoints2; x++)
-//     {
-//         free(data[x]);
-//     }
-//     free(data);
 	return(0);
 }
 
@@ -210,7 +137,6 @@ std::vector <std::vector <std::vector <double> > > startingPartition(vector < ve
 	std::vector <std::vector <std::vector <double> > > results;
 	std::vector <std::vector <double> > temp;
 	std::vector <double> temp1;
-	//cout << "In startingPartition\n";
 	
 	for(int x = 0; x < dim+1; x++)
 	{
@@ -227,29 +153,23 @@ std::vector <std::vector <std::vector <double> > > startingPartition(vector < ve
 		distances.push_back(0.0);
 	}
 	
-	//cout << "In startingPartition Initialization complete\n";
 	for(int currentPoint = 0; currentPoint < numOfPoints-1; currentPoint++)
 	{
-		//cout << currentPoint << "\n";
 		for(int x = 0; x < k; x++)
 		{
 			distances[x] = 0.0;
 		}
-		//cout << "Got to here0\n";
 		for(int x = 0; x < k; x++)
 		{
-			//cout << x << "\n";
 			if(dim == 2)
 			{
 				distances[x] = ((data[currentPoint][0] - maxs[x][0])/(sizeIncrease*widths[x][0]))*((data[currentPoint][0] - maxs[x][0])/(sizeIncrease*widths[x][0])) + ((data[currentPoint][1] - maxs[x][1])/(sizeIncrease*widths[x][1]))*((data[currentPoint][1] - maxs[x][1])/(sizeIncrease*widths[x][1]));
 			}
 			if(dim == 3)
 			{
-				//cout << "havent done that yet\n";
 				distances[x] = ((data[currentPoint][0] - maxs[x][0])/(sizeIncrease*widths[x][0]))*((data[currentPoint][0] - maxs[x][0])/(sizeIncrease*widths[x][0])) + ((data[currentPoint][1] - maxs[x][1])/(sizeIncrease*widths[x][1]))*((data[currentPoint][1] - maxs[x][1])/(sizeIncrease*widths[x][1])) + ((data[currentPoint][2] - maxs[x][2])/(sizeIncrease*widths[x][2]))*((data[currentPoint][2] - maxs[x][2])/(sizeIncrease*widths[x][2]));
 			}
 		}
-		//cout << "Got to here1\n";
 		std::vector<double>::iterator minDist = min_element(distances.begin(), distances.end());
 		int ind =  (int)std::distance(distances.begin(), minDist);
 		for(int x = 0; x <dim+1;x++)
@@ -279,8 +199,6 @@ std::vector <std::vector <std::vector <double> > > repartition(vector < vector <
 		results.push_back(temp);
 	}
 	
-	//For each point
-	//int x = 0;
 	for(int x = 0; x < numOfPoints; x++)
 	{
 		while(sections.size()>0)
@@ -335,8 +253,6 @@ std::vector <std::vector <std::vector <double> > > repartition(vector < vector <
 			}
 			if((height >= sum_neg - sum) && (height <= sum - sum_neg))
 			{
-				//p_neg = sum_neg + ((height - (sum_neg + sum))/N2);
-				//p_pos = sum + ((height - (sum_neg + sum))/N1);
 				p_neg = sum_neg + ((height - (sum_neg + sum))/2);
 				p_pos = sum + ((height - (sum_neg + sum))/2);
 			}
@@ -388,37 +304,16 @@ gene combineGenes(gene a, gene b, std::vector <std::vector <std::vector <double>
 			c.width[x] = a.width[x];
 		}
 	}
-	//std::vector <std::vector <double> > results2;
-	//std::vector <double> temp;
-	//for(int x = 0; x < c.dim+1; x++)
-	//{
-		//temp.push_back(0.0);
-	//}
-	//cout << "got to here\n";
-	//if(results.size() > 0)
-	//{
-		//for(int x = 0; x < results[aNum].size(); x++)
-		//{
-			//results2.push_back(temp);
-		//}
-		//for(int x = 0; x < results[bNum].size(); x++)
-		//{
-			//results2.push_back(temp);
-		//}
-	//}
 	c.fitness = a.fitness;
-	//cout << "finished combine\n";
 	return(c);
 }
 
 
 int removeRunaways(std::vector <gene> & genes, vector < vector <double> > & max, vector < vector <double> > & width, vector <double> & mins, vector <double> & Uplim, int & k, int dim)
 {
-	//int widthFlag = 0;
 	int goAgainFlag = 1;
 	int flag3 = 0;
 	int worstInd = -1;
-	//cout << "Removing runaways\n";
 	while(goAgainFlag == 1)
 	{
 		goAgainFlag = 0;
@@ -440,30 +335,15 @@ int removeRunaways(std::vector <gene> & genes, vector < vector <double> > & max,
 			}
 			if((flag3 == 1) & (k > 0) & (worstInd > -1))
 			{
-				//cout << mins[0] << " " << mins[1] << " " << Uplim[0] << " " << Uplim[1] << "\n";
-				//printGene(genes[worstInd]);
 				removeElement(genes, worstInd);
 				removeElement(max, worstInd);
 				removeElement(width, worstInd);
 				k = k - 1;
-				//cout << "Redoing with k-1 = " << k << "\n";
 				goAgainFlag = 1;
 				flag3 = 0;
 			}
 		}
-		// if((flag3 == 1) & (k > 0))
-		// {
-		// 	cout << mins[0] << " " << mins[1] << " " << Uplim[0] << " " << Uplim[1] << "\n";
-		// 	printGene(genes[worstInd]);
-		// 	removeElement(genes, worstInd);
-		// 	removeElement(max, worstInd);
-		// 	removeElement(width, worstInd);
-		// 	k = k - 1;
-		// 	cout << "Redoing with k-1 = " << k << "\n";
-		// 	goAgainFlag = 1;
-		// }
 	}
-	//cout << "Completed removeRunaways\n";
 	return(flag3);
 }
 
@@ -471,24 +351,17 @@ int checkLineWidths(std::vector <gene> & genes, vector < vector <double> > & max
 {
 	int flag2 = 0;	
 	int widthFlag = 0;
-	//int goAgainFlag = 1;
 	int worstInd = -1;
-	//cout << "Removing too thin and too thick\n";
-	// while(goAgainFlag == 1)
-	// {
-		//goAgainFlag = 0;
 		for(int x = (k-1); x >= 0; x--)
 		{
 			widthFlag = 0;
 			for(int y = 0; y < dim; y++)
 			{
-				//cout << x << "\n";
 				if((genes[x].width[y] < 0.0001) | (genes[x].width[y] > 10))
 				{
 					flag2 = 1;
 					widthFlag = 1;
 					worstInd = x;
-					//printGene(genes[x]);
 				}
 			}
 			if(widthFlag == 1)
@@ -499,23 +372,9 @@ int checkLineWidths(std::vector <gene> & genes, vector < vector <double> > & max
 					removeElement(max, worstInd);
 					removeElement(width, worstInd);
 					k = k - 1;
-					//goAgainFlag = 1;
 				}
 			}
 		}
-		// if(widthFlag == 1)
-		// {
-		// 	if(k > 0)
-		// 	{
-		// 		removeElement(genes, worstInd);
-		// 		removeElement(max, worstInd);
-		// 		removeElement(width, worstInd);
-		// 		k = k - 1;
-		// 		goAgainFlag = 1;
-		// 	}
-		// }
-		//}
-	//cout << "Completed checkLineWidths\n";
 	return(flag2);
 }
 
@@ -523,89 +382,43 @@ int runCombine(int & k, std::vector <gene> & genes, int dim, vector < vector <do
 {
 	gene temp;
 	int flag1 = 0;
-	//double cut = 0.5;
-	//double cut = 1.0;
-	//maybe try 0.75 next? or 0.8?
 	if(k > 1)
 	{
-		//cout << "Here6\n";
 		for(int x = 0; x < k; x++)
 		{
-			//cout << x << " Here7\n";
 			for(int y = (k-1); y >= 0; y--)
 			{
-				//cout << y << " Here8\n";
 				if(y != x)
 				{
-					//cout << y << " Here9\n";
 					flag1 = 0;
 					if(genes.size() > 0)
 					{
-						//cout << y << " Here10\n";
 						for(int q = 0; q < dim; q++)
 						{
-							//cout << y << " Here10.1\n";
-							//cout << x << "\n";
 							if(y < k && x < k)
 							{
-								//cout << "good\n";
 								if(abs(genes[y].center[q] - genes[x].center[q]) < cut*(genes[x].width[q]))
 								{
-									//cout << y << " Here10.2\n";
-									//printGene(genes[y]);
-									//printGene(genes[x]);
-									//flag1++;
 									if(genes[x].height > genes[y].height)
 									{
 										flag1++;
 									}
-									// if(genes[x].width[q] < genes[y].width[q]*2)
-		// 							{
-		// 								flag1++;
-		// 							}
-									//cout << y << " Here10.3\n";
 								}
 							}
-							/*if(abs(genes[y].center[q] - genes[x].center[q]) < 0.5*(genes[x].width[q]))
-							{
-								cout << y << " Here10.2\n";
-								//printGene(genes[y]);
-								//printGene(genes[x]);
-								//flag1++;
-								if(genes[x].height > genes[y].height)
-								{
-									flag1++;
-								}
-								// if(genes[x].width[q] < genes[y].width[q]*2)
-	// 							{
-	// 								flag1++;
-	// 							}
-								cout << y << " Here10.3\n";
-							}*/
-							//cout << y << " Here10.4\n";
 						}
-						//cout << y << " Here11\n";
 						if(flag1 == dim)
 						{
 							temp = combineGenes(genes[x], genes[y], results, x, y, cut);
-							//cout << "Got to here1\n";
 							//if the returned gene has a fitness below 10^18, then the combine was a success.
 							if(temp.fitness < 1e+18)
 							{
 								genes[x] = temp;
-								//cout << "Got to here2.1\n";
 								removeElement(genes, y);
-								//cout << "Got to here2.2\n";
 								removeElement(max, y);
-								//cout << "Got to here2.3\n";
 								removeElement(width, y);
 								k = k-1;
-								//flag1 = 1;
 							}
-							//cout << "Got to here2\n";
-						
 						}
-						//cout << y << " Here12\n";
 					}
 					if(genes.size() == 0)
 					{
@@ -626,15 +439,10 @@ int runCombine(int & k, std::vector <gene> & genes, int dim, vector < vector <do
 							k = k-1;
 						}
 					}
-					//cout << "Got to here3.1\n";
 				}
-				//cout << "Got to here3.2\n";
 			}
-			//cout << "Got to here3.3\n";
 		}
-		//cout << "Got to here3.4\n";
 	}
-	//cout << "Got to here3\n";
 	return(k);
 }
 
@@ -666,21 +474,17 @@ until: no points change clusters
 Report final cluster assignment and statistical model
 
 for us:
-cut high (1/5 of max maybe), and initialize to the number of likely cluster model centers.
+cut high (1/30 of max maybe), and initialize to the number of likely cluster model centers.
 Once these models have been found subtract the model from the data, and restart.
 */
-//Maybe: Partition, fit give only a fraction of each point to each model, refit, repeat until convergence
 std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints, int dim, int k, vector < vector <double> > maxs, vector < vector <double> > widths, double cutoff, double Thresh)
 {
 	cout << "Inside K-models\n";
 	vector <double> mins;
 	vector <double> Uplim;
 	int max_Proc = std::thread::hardware_concurrency();
-	//int max_Proc = 1;
 	cout << max_Proc << "\n";
 	
-	//double temp1 = 0;
-	//double temp2 = 1000000000;
 	for(int x = 0; x < dim; x++)
 	{
 		mins.push_back(10000000.0);
@@ -743,19 +547,13 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		}
 		width.push_back(width2);
 	}
-	//cout << "Here\n";
 	
 	int count = 0;
 	
 	//partition
 	results = startingPartition(data, numOfPoints, dim, k, max, width);
-	//outputDatasetClustersV1(data, numOfPoints, dim, results);
-	//cout << "Here2\n";
-	//outputVector(max, "maxs1.txt", int(widths.size()));
 	
 	//if any partitions have too few points, remove the shortest model, and do starting partition again
-	
-	//int flag_tooSmall = 0;
 	int flag_goAgain = 1;
 	int toRemove = -1;
 	int smallest = 18;
@@ -778,7 +576,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		}
 		if(flag_goAgain == 1)
 		{
-			//double smallest_H = 1000000000;
 			smallest_H = 1000000000;
 			flag_goAgain = 0;
 			for(int x = 0; x < k; x++)
@@ -804,9 +601,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			}
 		}
 	}
-	
-	//outputDatasetClustersV1(data, numOfPoints, dim, results);
-	//outputVector(max, "maxs.txt", int(max.size()));
 	
 	for(int x = 0; x < k; x++)
 	{
@@ -845,7 +639,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		vector<std::thread> threads(k);
 		for(int x = 0; x < k; x++)
 		{
-			//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 			threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
 		}
 		for(int x = 0; x < k; x++)
@@ -863,7 +656,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			cout << count << "\n";
 			for(int x = count; x < max_Proc + count; x++)
 			{
-				//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 				if(x < k)
 				{
 					threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
@@ -880,55 +672,17 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		}
 	}
 	cout << k << "\n";
-	for(int x = 0; x < k; x++)
-	{
-		printGene(genes[x]);
-	}
-	/*for(int x = 0; x < k; x++)
-	{
-		genes[x] = DE(results[x], int(results[x].size()), dim, max[x], width[x]);
-		printGene(genes[x]);
-		for(int y = 0; y < dim; y++)
-		{
-			max[x][y] = genes[x].center[y];
-			width[x][y] = genes[x].width[y];
-		}
-		max[x][dim] = genes[x].height;
-	}*/
-	
-	//cout << "Here5\n";
-	//outputVector(max, "maxs1.txt", int(max.size()));
-	
 
 	int flag3 = 0;
-	// removeRunaways(genes, max, width, mins, Uplim, k, dim);
-// 	cout << k << "\n";
-	
-	//flag = 0;s
-	//cout << "                   HERE21\n";
 	int flag2 = 0;	
 	flag2 = checkLineWidths(genes, max, width, k, dim);
 	flag = 1;
-	//outputVector(max, "maxs3.txt", int(max.size()));
-	//cout << "                   HERE22\n";
 	
 	//combine
 	k = runCombine(k, genes, dim, max, width, results, 1.0);
-	//outputVector(max, "maxs2.txt", int(max.size()));
-	//cout << "Here5.5\n";
 	gene temp;
 	int flag1 = 0;
-	//cout << "Here6\n";
 	
-	// for(int x = 0; x < k; x++)
-// 	{
-// 		for(int y = 0; y < dim; y++)
-// 		{
-// 			max[x][y] = genes[x].center[y];
-// 			width[x][y] = genes[x].width[y];
-// 		}
-// 		max[x][dim] = genes[x].height;
-// 	}
 
 	//formerlly, the initial parition is done for every k decrease. Might want to reduce that. Remove the worst model, or the model with erroneous parameters, and then keep the fittings from before rather than redo them.
 	//what if we removed all erroneous models at once, rather than one at a time? With the double repartition, it takes too long for cluster 16 (k=12 to start, ends with k=11?)
@@ -952,7 +706,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			vector<std::thread> threads(k);
 			for(int x = 0; x < k; x++)
 			{
-				//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 				threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
 			}
 			for(int x = 0; x < k; x++)
@@ -970,7 +723,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 				cout << count << "\n";
 				for(int x = count; x < max_Proc + count; x++)
 				{
-					//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 					if(x < k)
 					{
 						threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
@@ -986,28 +738,11 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 				count = count + max_Proc;
 			}
 		}
-		/*for(int x = 0; x < k; x++)
-		{
-			//genes[x] = DE(results[x], int(results[x].size()), dim, max[x], width[x]);
-			cout << "Working on it\n";
-			std::thread t1(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
-			cout << "got through it!\n";
-			t1.join();
-			cout << "done!\n";
-			printGene(genes[x]);
-			/*for(int y = 0; y < dim; y++)
-			{
-				max[x][y] = genes[x].center[y];
-				width[x][y] = genes[x].width[y];
-			}
-			max[x][dim] = genes[x].height;
-		}*/
 		
 		if(k > 1)
 		{
 			//repartition
 			results = repartition(data, genes, dim, numOfPoints, k, Thresh);
-			//outputDatasetClustersV2(data, numOfPoints, dim, results);
 			if(k == 1)
 			{
 				genes[0] = DE(results[0], int(results[0].size()), dim, max[0], width[0]);
@@ -1015,11 +750,9 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			cout << k << "\n";
 			if(k > 1 & k <= max_Proc)
 			{
-				cout << "In here!\n";
 				vector<std::thread> threads(k);
 				for(int x = 0; x < k; x++)
 				{
-					//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 					threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
 				}
 				for(int x = 0; x < k; x++)
@@ -1030,14 +763,12 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			if(k > 1 & k > max_Proc)
 			{
 				int count = 0;
-				cout << "In here2!\n";
 				vector<std::thread> threads(k);
 				while(count < k)
 				{	
 					cout << count << "\n";
 					for(int x = count; x < max_Proc + count; x++)
 					{
-						//threads.push_back(std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x])));
 						if(x < k)
 						{
 							threads[x] = std::thread(&Multithread_DE, results[x], int(results[x].size()), dim, std::ref(max[x]), std::ref(width[x]), std::ref(genes[x]));
@@ -1053,18 +784,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 					count = count + max_Proc;
 				}
 			}
-			//Refit
-			/*for(int x = 0; x < k; x++)
-			{
-				genes[x] = DE(results[x], int(results[x].size()), dim, max[x], width[x]);
-				printGene(genes[x]);
-				for(int y = 0; y < dim; y++)
-				{
-					max[x][y] = genes[x].center[y];
-					width[x][y] = genes[x].width[y];
-				}
-				max[x][dim] = genes[x].height;
-			}*/
 		}
 
 		
@@ -1074,16 +793,10 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		flag = 0;
 		worst = 0.0;
 		worstInd = -1;
-		//flag2 = 0;
-		//widthFlag = 0;
-		//goAgainFlag = 1;
-		//if a gene is not within 4 linewidths of another hill, remove it. this may not work
-		//maybe within range of data? 
-		cout << "Checking Range\n";
+		//cout << "Checking Range\n";
 		flag3 = removeRunaways(genes, max, width, mins, Uplim, k, dim);
 		
-		cout << "Checking fitness\n";
-		//if any fit worse than 2.5% (cutoff) normalized error, remove the worst fitting model, and try again with one less K.
+		//cout << "Checking fitness\n";
 		for(int x = 0; x < genes.size(); x++)
 		{
 			if(genes[x].fitness > cutoff)
@@ -1099,12 +812,10 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 		//removes worst hill
 		if(flag == 1 & k > 0)
 		{
-			printGene(genes[worstInd]);
 			removeElement(genes, worstInd);
 			removeElement(max, worstInd);
 			removeElement(width, worstInd);
 			k = k - 1;
-			cout << "Redoing with k-1 = " << k << "\n";
 		}
 		
 		flag1 = runCombine(k, genes, dim, max, width, results, 1.0);
@@ -1125,7 +836,6 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 	}
 	if(k == 0)
 	{
-		cout << "Finishing with 1 hill\n";
 		k = 1;
 		for(int x = 0; x < k; x++)
 		{
@@ -1152,14 +862,11 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			}
 			width.push_back(width2);
 		}
-		//results = repartition(data, genes, dim, numOfPoints, k, Thresh);
 		results = startingPartition(data, numOfPoints, dim, k, maxs, widths);
-		//outputDatasetClustersV1(data, numOfPoints, dim, results);
 		//fit
 		for(int x = 0; x < k; x++)
 		{
 			genes[x] = DE(results[x], int(results[x].size()), dim, maxs[x], widths[x]);
-			printGene(genes[x]);
 			for(int y = 0; y < dim; y++)
 			{
 				max[x][y] = genes[x].center[y];
@@ -1167,24 +874,10 @@ std::vector <gene> kmodels(vector <std::vector<double> > & data, int numOfPoints
 			}
 			max[x][dim] = genes[x].height;
 		}
-		
-		//add a bit here that removes the last peak if it is bad.
-		//flag2 = 0;
 		flag2 = checkLineWidths(genes, max, width, k, dim);
 
-		cout << "Checking Range\n";
-		//flag3 = 0;
 		flag3 = removeRunaways(genes, max, width, mins, Uplim, k, dim);
-		cout << k << "\n";
-		cout << genes.size() << "\n";
 	}
-	//runCombine(k, genes, dim, max, width, results, 1.0);
-	//outputVector(max, "maxs_final.txt", int(max.size()));
-	cout << "All done\n";
-	//report
-	cout << k << "\n";
-	cout << genes.size() << "\n";
-	//outputDatasetClustersV2(data, numOfPoints, dim, results);
 	return(genes);
 }
 
@@ -1197,10 +890,6 @@ vector <double> findMaxOther(vector <std::vector<double> > & listOfPoints, int n
 		max2.push_back(-10000000.0);
 	}
 	
-	//double w = 0;
-	
-	//w = (*min_element(widths.begin(), widths.end()))/2;
-	//cout << w << "\n";
 	double elipse = 0;
 	int counter = 0;
 	double sizeIncrease = 1.0;
@@ -1208,8 +897,6 @@ vector <double> findMaxOther(vector <std::vector<double> > & listOfPoints, int n
 	vector <std::vector<double> > :: iterator it;
 	for(it = listOfPoints.begin(); it != listOfPoints.end(); it++)
 	{
-		//cout << currentMax[0] << " " << currentMax[1] << " " << currentMax[2] << "\n";
-		//cout << dist((*it), currentMax) << "\n";
 		elipse = 0;
 		counter = 0;
 		for(int x = 0; x < currentMax.size(); x++)
@@ -1231,7 +918,6 @@ vector <double> findMaxOther(vector <std::vector<double> > & listOfPoints, int n
 				counter++;
 			}
 		}
-		//cout << counter << "\n";
 		if(counter == currentMax.size())
 		{
 			if(dim == 2)
@@ -1270,251 +956,6 @@ vector <double> findMaxOther(vector <std::vector<double> > & listOfPoints, int n
 		}
 	}
 	return(max2);
-}
-
-
-// void ReadData(string input1, list <std::vector<double> > * listOfPoints)
-// {//read in the data
-//
-// 	fstream input;
-// 	char buf1[256];
-// 	string buf2;
-// 	//list <string> lines;
-//     string line;
-//
-// 	string inputFile = input1;
-//
-// 	//cout << inputFile << "\n";
-//     std::vector<double> out;
-// 	input.open(inputFile,ios::in);
-// 	input.getline(buf1, 255); //Get first line
-//     line = buf1;
-// 	//cout << line;
-//     tokenize(line, ' ', &out);
-//     std::vector<double> buffer = std::vector<double> (out);
-//     out.erase(out.begin(), out.end());
-//     listOfPoints->push_back(buffer);
-//     //char flag = 0;
-//
-// 	while((strlen(buf1)>0))//while we have data
-// 	{
-//         input.getline(buf1, 255);
-//         if(input.eof())
-//         {
-//             input.close();
-//             return;
-//         }
-//         line = buf1;
-//         tokenize(line, ' ', &out);
-//         std::vector<double> buffer = std::vector<double> (out);
-//         out.erase(out.begin(), out.end());
-//         listOfPoints->push_back(buffer);
-// 		//lines.push_back(buf1);
-// 	}
-// 	input.close();
-// }
-//
-// void tokenize(std::string const str, const char delim, std::vector<double> * out)
-// {
-// 	std::stringstream ss(str);
-// 	std::string s;
-// 	std::vector<string> temp;
-// 	while(std::getline(ss, s, delim))
-// 	{
-// 		temp.push_back(s);
-// 	}
-//
-// 	std::vector<string>:: iterator it;
-//     for(it = temp.begin(); it != temp.end(); ++it)
-// 	{
-// 		out->push_back(stod(*it));
-// 	}
-// }
-
-void outputVector2(vector < vector <double> > & data, string filename, int size, int dim)
-{
-	//cout << "In outputVector\n";
-    fstream aus;  //output file
-    aus.open(filename,ios::out);
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < size; x++)
-	{
-		outstring = "";
-		for(int y = 0; y < dim; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		//outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim; y < dim*2; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim*2+1; y < dim*3+1; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		//outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim*3+1; y < dim*4+1; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//outstring = outstring + "\n";
-		//cout << outstring;
-		aus << outstring;
-	}
-	aus.close();
-}
-
-void outputVector3(vector < vector <double> > & data, string filename, int size, int dim)
-{
-	//cout << "In outputVector\n";
-    fstream aus;  //output file
-    aus.open(filename,ios::out);
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < size; x++)
-	{
-		outstring = "";
-		for(int y = 0; y < dim; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim; y < dim*2; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim*2+1; y < dim*3+1; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//cout << outstring;
-		for(int y = dim*3+1; y < dim*4+1; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + to_string(data[x][data[x].size()-1]);
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		outstring = outstring + "\n";
-		//cout << outstring;
-		aus << outstring;
-	}
-	aus.close();
-}
-
-void outputVector(vector < vector <double> > & data, string filename, int size)
-{
-    fstream aus;  //output file
-    aus.open(filename,ios::out);
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < size; x++)
-	{
-		outstring = "";
-		for(int y = 0; y < data[x].size(); y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + "\n";
-		aus << outstring;
-	}
-	aus.close();
-}
-
-void outputDataset(vector <vector <double> > & data, int numOfPoints, int dim, string filename)
-{
-    fstream aus;  //output file
-    aus.open(filename,ios::out);
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < numOfPoints; x++)
-	{
-		outstring = "";
-		for(int y = 0; y < dim+1; y++)
-		{
-			outstring = outstring + to_string(data[x][y]) + " ";
-		}
-		outstring = outstring + "\n";
-		aus << outstring;
-	}
-	aus.close();
-}
-
-void outputDatasetClustersV1(vector < vector <double> > & data, int numOfPoints, int dim, std::vector <std::vector <std::vector <double> > > clusters)
-{
-    fstream aus;  //output file
-	string filename;
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < clusters.size(); x++)
-	{
-		filename = "cluster" + to_string(x) + ".txt";
-    	aus.open(filename,ios::out);
-		aus.precision(7);
-		for(int z = 0; z < clusters[x].size(); z++)
-		{
-			outstring = "";
-			for(int w = 0; w < clusters[x][z].size(); w++)
-			{
-				outstring = outstring + to_string(clusters[x][z][w]) + " ";
-			}
-			outstring = outstring + "\n";
-			aus << outstring;
-		}
-		aus.close();
-	}
-}
-
-void outputDatasetClustersV2(vector < vector <double> > & data, int numOfPoints, int dim, std::vector <std::vector <std::vector <double> > > clusters)
-{
-    fstream aus;  //output file
-	string filename;
-	aus.precision(7);
-	string outstring;
-	for(int x = 0; x < clusters.size(); x++)
-	{
-		filename = "Round2_cluster" + to_string(x) + ".txt";
-    	aus.open(filename,ios::out);
-		aus.precision(7);
-		for(int z = 0; z < clusters[x].size(); z++)
-		{
-			outstring = "";
-			for(int w = 0; w < clusters[x][z].size(); w++)
-			{
-				outstring = outstring + to_string(clusters[x][z][w]) + " ";
-			}
-			outstring = outstring + "\n";
-			aus << outstring;
-		}
-		aus.close();
-	}
 }
 
 void removeElement(std::vector<gene>& vec, int index)
