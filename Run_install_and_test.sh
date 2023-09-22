@@ -39,7 +39,16 @@ cd Threshold
 ./Run2.sh $PWD/Spectra/ThresholdingTestSpec049_mth1743_Nhsqc.ft2 6 #~37 mins
 cd ..
 
-sudo cp -s $PWD/OptimusPeak.sh /usr/bin/OptimusPeak
+echo "Now implementing symbolic link for Optimus Peak. This will allow Optimus Peak to be called from anywhere in the directory. Would you like this initailized? (y/n)"
+read answer
+
+if [ $answer == "y" ]; then
+	sudo cp -s $PWD/OptimusPeak.sh /usr/bin/OptimusPeak
+fi
+
+if [ $answer == "yes" ]; then
+	sudo cp -s $PWD/OptimusPeak.sh /usr/bin/OptimusPeak
+fi
 
 echo "Install and Test complete"
 
