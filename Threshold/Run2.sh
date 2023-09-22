@@ -25,7 +25,7 @@ fi
 rm Thresholding_output.txt
 
 #threshold Spectrum
-python3 ThresholderGuas2.py $1 >> Thresholding_output.txt
+python3 ThresholderGuas2.py $1 #>> Thresholding_output.txt
 
 #if thresholding was successful, continue
 if [ -f "Threshold/Outlist.bin" ]; then
