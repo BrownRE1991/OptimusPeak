@@ -9,26 +9,26 @@
 
 
 using namespace std;
-pthread_mutex_t m;
 static int ** listOfRowsGraph;
 
+//Reads in binary nmr spectral data output from thresholding algorithm
 void ReadData_bin(string filename, std::vector <std::vector<double> > * listOfPoints);
-void tokenize(std::string const str, const char delim, std::vector<double> * out);
+//determines the max and min of each dimension in the spectrum
 double ** grabDimensions(int dim, double ** data, int numOfPoints);
-double ** generate(int clusters, int dim, double ** dimensionVariables);
-double distance2D(double pointx1, double pointy1, double pointx2, double pointy2, int max1, int max2, int min1, int min2);
-double distance3D(double pointx1, double pointy1, double pointz1, double pointx2, double pointy2, double pointz2);
 
 //from ASRG
+//Main ASRG algorithm
 void ASRG(std::list <std::vector <double> > Seeds, std::vector <std::vector<double> >  listOfPoints, double ** dimensionVariables, struct imageStats imstat, std::vector <std::vector <std::vector <int> > > dataGraph, int numOfPoints, int dim);
-void ASRGsingleCluster2D(int start, std::vector <int> * cluster, int currentCluster, int dim, std::vector <std::vector<double> > * listOfPoints, double ** dimensionVariables, struct imageStats imstat, std::vector <std::vector <std::vector <int> > > * dataGraph, int numOfPoints);
+//Generates a single cluster using ASRG given a dataset and a starting data point.
+void ASRGsingleCluster(int start, std::vector <int> * cluster, int currentCluster, int dim, std::vector <std::vector<double> > * listOfPoints, double ** dimensionVariables, struct imageStats imstat, std::vector <std::vector <std::vector <int> > > * dataGraph, int numOfPoints);
+//Outputs the clusters as individual .txt files to be processed seperatly using multiprocessing.
 void writeFile2(std::vector <int> finalList, std::vector <std::vector<double> > listOfPoints, int numOfClusters, int numOfPoints, int dim, int flag);
+//impliments binary search to find the index of the datapoint passed in the "listOfPoints" list.
 int findListIndex(std::vector <double> input, std::vector <std::vector<double> >  listOfPoints, int numOfPoints, int dim);
-std::vector <std::vector <std::vector <int> > > generateImageGraph(double ** dimensionVariables, double ** data, int dim, int numOfPoints, struct imageStats * imstat, vector < vector <int> > * transistionList);
+//Generates an array the same sizes as the spectra, where the locations with data contain their index in "listOfPoints" +1, and the locations without datapoints contain a 0. This graph is used in ASRG to determine the clusters.
+std::vector <std::vector <std::vector <int> > > generateImageGraph(double ** dimensionVariables, double ** data, int dim, int numOfPoints, struct imageStats * imstat, vector < vector <int> > * transistionList); 
+//Converts the corrdinates of a pixel in the graph to an index in the "listOfPoints" list.
 std::vector <int> convertToIndex(vector<double> input, double ** dimensionVariables, struct imageStats imstat, int dim);
-	
-int maxC = 100;
-int minC = 10;
 
 struct imageStats
 {
@@ -40,96 +40,7 @@ struct imageStats
     double yintervals;
     double zintervals;
     double wintervals;
-};
-
-void tokenize(std::string const str, const char delim, std::vector<double> * out)
-{
-	std::stringstream ss(str);
-	std::string s;
-	std::vector<string> temp;
-	while(std::getline(ss, s, delim))
-	{
-		temp.push_back(s);
-	}
-	
-	std::vector<string>:: iterator it;  
-    for(it = temp.begin(); it != temp.end(); ++it) 
-	{
-		out->push_back(stod(*it));
-	}
-}
-
-double ** generate(int clusters, int dim, double ** dimensionVariables)
-{
-	double ** result = NULL;
-	double maxX = dimensionVariables[0][1];
-	double minX = dimensionVariables[0][0];
-	double maxY = 0;
-	double minY = 0;
-	double maxZ = 0;
-	double minZ = 0;
-	double maxW = 0;
-	double minW = 0;
-	if(dim > 1)
-	{
-		maxY = dimensionVariables[1][1];
-		minY = dimensionVariables[1][0];
-	}
-	if(dim > 2)
-	{
-		maxZ = dimensionVariables[2][1];
-		minZ = dimensionVariables[2][0];
-	}
-	if(dim > 3)
-	{
-		maxW = dimensionVariables[3][1];
-		minW = dimensionVariables[3][0];
-	}
-	result = (double**)(malloc(clusters*sizeof(double*)));
-	for(int x = 0; x < clusters; x++)
-	{
-		result[x] = (double*)(malloc(dim*sizeof(double)));
-		for(int y = 0; y < dim; y++)
- 		{
-			result[x][0] = double(((rand()%100)/100.0)*(maxX - minX) + minX);
-			if(dim > 1)
-			{
-				result[x][1] = double(((rand()%100)/100.0)*(maxY - minY) + minY);
-			}
-			if(dim > 2)
-			{
-				result[x][2] = double(((rand()%100)/100.0)*(maxZ - minZ) + minZ);
-			}
-			if(dim > 3)
-			{
-				result[x][3] = double(((rand()%100)/100.0)*(maxW - minW) + minW);
-			}
-		}
-	}
-	return(result);
-}
-
-double distance2D(double pointx1, double pointy1, double pointx2, double pointy2, int max1, int max2, int min1, int min2)
-{
-	double x = abs(pointx1 - pointx2);
-	double y = abs(pointy1 - pointy2);
-	x = x*x;
-	y = y*y;
-	double result = sqrt(x+y);
-	return(result);
-}
-
-double distance3D(double pointx1, double pointy1, double pointz1, double pointx2, double pointy2, double pointz2)
-{
-	double x = abs(pointx1 - pointx2);
-	double y = abs(pointy1 - pointy2);
-	double z = abs(pointz1 - pointz2);
-	x = x*x;
-	y = y*y;
-	z = z*z;
-	double result = sqrt(x+y+z);
-	return(result);
-}
+}; //this contains the variables that when conbined with dimension variables can convert frequency x and y coorindates to the matrix x and y coordinates and back again
 
 double ** grabDimensions(int dim, double ** data, int numOfPoints)
 {
@@ -682,7 +593,7 @@ void removeDuplicates(std::vector <int> & stack)
 	}
 }
 
-void ASRGsingleCluster2D(int start, std::vector <int> * cluster, int currentCluster, int dim, std::vector <std::vector<double> > * listOfPoints, double ** dimensionVariables, struct imageStats imstat, std::vector <std::vector <std::vector <int> > > * dataGraph, int numOfPoints)
+void ASRGsingleCluster(int start, std::vector <int> * cluster, int currentCluster, int dim, std::vector <std::vector<double> > * listOfPoints, double ** dimensionVariables, struct imageStats imstat, std::vector <std::vector <std::vector <int> > > * dataGraph, int numOfPoints)
 {
     std::vector <int> stack;
     std::vector <int> workingIndex;
@@ -1359,7 +1270,7 @@ void ASRG(std::list <std::vector <double> > Seeds, std::vector <std::vector<doub
         currentCluster++;
         it = Seeds.begin();
         start = findListIndex((*it), listOfPoints, numOfPoints, dim);
-        ASRGsingleCluster2D(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
+        ASRGsingleCluster(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
         it++;
         while(it != Seeds.end())
         {
@@ -1367,7 +1278,7 @@ void ASRG(std::list <std::vector <double> > Seeds, std::vector <std::vector<doub
             if(cluster[start] < 1)
             {
                 currentCluster++;
-                ASRGsingleCluster2D(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
+                ASRGsingleCluster(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
             }
             it++;
         }
@@ -1381,7 +1292,7 @@ void ASRG(std::list <std::vector <double> > Seeds, std::vector <std::vector<doub
             cout << output_string;
             start = y;
             currentCluster++;
-            ASRGsingleCluster2D(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
+            ASRGsingleCluster(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
             std::cout.flush();
         }
     }
@@ -1392,7 +1303,7 @@ void ASRG(std::list <std::vector <double> > Seeds, std::vector <std::vector<doub
         {
             start = y;
             currentCluster++;
-            ASRGsingleCluster2D(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
+            ASRGsingleCluster(start, &cluster, currentCluster, dim, &listOfPoints, dimensionVariables, imstat, &dataGraph, numOfPoints);
             cout << "Cluster " << currentCluster << " Complete\n";
         }
     }
@@ -1519,7 +1430,6 @@ int main(int argc, char ** argv)
     
     ReadData_bin("Outlist.bin", &listOfPoints);
 	
-    pthread_mutex_init(&m, NULL);
     int dim = 0;
     dim = (int)listOfPoints.begin()->size() - 1;
 	int numOfPoints = (int)listOfPoints.size();
