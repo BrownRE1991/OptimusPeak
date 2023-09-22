@@ -10,7 +10,7 @@ scipy
 numpy
 nmrglue
 matplotlib
-
+scipy.optimize
 
 Input:
 Spectrum file location (full path),
