@@ -47,6 +47,7 @@ def applyFixedThreshold(specData, threshold1, threshold2, zero):
 #    plt.title('Histogram of Intensities' + str(count))
 #    if log:
 #        plt.yscale('log')
+#	 plt.save(filename)
 #    plt.clf()
 #    plt.close()
     
@@ -60,6 +61,7 @@ def applyFixedThreshold(specData, threshold1, threshold2, zero):
 #    plt.title('Histogram of Intensities')
 #    if log:
 #        plt.yscale('log')
+#	 plt.save(filename)
 #    plt.clf()
 #    plt.close()
 

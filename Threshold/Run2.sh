@@ -8,19 +8,19 @@ w=$1
 n=$2
 
 #if not given a specific number of cores, then use nproc
-if [ -z "$2" ]
-	then
-    	echo "No argument supplied"
-    	n=$(nproc)
+#if [ -z "$2" ]
+	#then
+    	#echo "No argument supplied"
+    	#n=$(nproc)
 	#if given a number of cores, but that number is less than 1, set number of cores to 6
-	else
-		if [ $2 -lt 1 ]
-		then
-			n=6
-		else
-			n=$2
-	fi
-fi
+	#else
+		#if [ $2 -lt 1 ]
+		#then
+			#n=6
+		#else
+			#n=$2
+	#fi
+#fi
 
 rm Thresholding_output.txt
 
@@ -33,7 +33,7 @@ if [ -f "Threshold/Outlist.bin" ]; then
 	cd ../Kcluster
 	./Run_cluster.sh
 	cd ../Deconvolution
-	./Run_Decon.sh $w $n
+	./Run_Decon.sh $w $2
 	cd ../FinalPeaks
 	./RunEval.sh $w 0
 fi
