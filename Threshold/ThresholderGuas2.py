@@ -9,12 +9,14 @@ import math
 import warnings
 warnings.filterwarnings("ignore")
 
+#uses nmrGlue to extract spectra.
 def readNMR( filename ):
     dic,data = ng.pipe.read(filename)
     data = np.flip(data, axis=0)
     data = np.flipud(data)
     return dic, data
-    
+
+#takes the spectrum, the upper and lower thresholds, and the value to collapse to ("zero"), and returns the array where all values between the upper and lower thresholds are converted to "zero". This function does the grunt works after the threshold has been determined. You can use it with any threshold you want.
 def applyFixedThreshold(specData, threshold1, threshold2, zero):
     th1 = 0
     th2 = 0
