@@ -41,12 +41,21 @@ cd ..
 
 echo "Now implementing symbolic link for Optimus Peak. This will allow Optimus Peak to be called from anywhere in the directory. Would you like this initailized? (y/n)"
 read answer
-
 if [ $answer == "y" ]; then
+	if [ -L ${OptimusPeak} ] ; then
+   		if [ -e ${OptimusPeak} ] ; then
+			sudo rm /usr/bin/OptimusPeak
+   		fi
+	fi
 	sudo cp -s $PWD/OptimusPeak.sh /usr/bin/OptimusPeak
 fi
 
 if [ $answer == "yes" ]; then
+	if [ -L ${OptimusPeak} ] ; then
+   		if [ -e ${OptimusPeak} ] ; then
+			sudo rm /usr/bin/OptimusPeak
+   		fi
+	fi
 	sudo cp -s $PWD/OptimusPeak.sh /usr/bin/OptimusPeak
 fi
 
