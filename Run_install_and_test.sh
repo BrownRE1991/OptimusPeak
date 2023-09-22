@@ -36,7 +36,7 @@ chmod +x RunEval.sh
 cd ..
 
 cd Threshold
-./Run2.sh $PWD/Spectra/ThresholdingTestSpec049_mth1743_Nhsqc.ft2 6 #~37 mins
+./Run2.sh $PWD/Spectra/ThresholdingTestSpec049_mth1743_Nhsqc.ft2 #~37 mins
 cd ..
 
 echo "Now implementing symbolic link for Optimus Peak. This will allow Optimus Peak to be called from anywhere in the directory. Would you like this initailized? (y/n)"
