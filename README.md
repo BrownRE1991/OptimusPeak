@@ -1,7 +1,7 @@
 # OptimusPeak
 Source code for program Optimus Peak, a Protein NMR Spectral Peak-Picker for 2 and 3D NMR spectra. 
 
-Program coming soon. Current version works on Linux. 
+Current version works on Linux and MacOS.
 
 Requirements:
 g++
